@@ -5,6 +5,8 @@ OBMC_MACHINE_FEATURES += "\
         obmc-phosphor-flash-mgmt \
         obmc-phosphor-event-mgmt \
         openpower-pflash \
+	openpower-pdbg \
+	openpower-gard \
         "
 
 VIRTUAL-RUNTIME_obmc-phosphor-fan-ctl = " \
