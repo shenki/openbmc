@@ -1,2 +1,2 @@
-SRCREV ?= "44dd5a6ea7141610ffa922e9557c62552010b8a5"
-SKELETON_URI ?= "git://github.com/openbmc/skeleton"
+SRCREV ?= "0a2c6c1edc4746e13ba6de454dee81ec37f9fd72"
+SKELETON_URI ?= "git://github.com/shenki/skeleton;branch=flasher-cleanups"
