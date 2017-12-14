@@ -94,6 +94,7 @@ CORE_IMAGE_EXTRA_INSTALL_append = " bash \
         rsync \
         rng-tools \
         lrzsz \
+        perf \
         "
 
 OBMC_IMAGE_EXTRA_INSTALL ?= ""
