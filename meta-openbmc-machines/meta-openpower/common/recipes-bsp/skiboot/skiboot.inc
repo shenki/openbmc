@@ -2,7 +2,6 @@ HOMEPAGE = "https://github.com/open-power"
 LICENSE = "Apache-2.0"
 
 SRC_URI += "git://github.com/open-power/skiboot.git;nobranch=1"
-SRC_URI += "file://0001-external-Use-more-standard-PREFIX-vs-prefix.patch"
 
 FILESEXTRAPATHS_append := "${THISDIR}/skiboot:"
 
@@ -22,5 +21,5 @@ do_compile() {
 }
 
 do_install() {
-    oe_runmake -C ${SKIBOOT_SUBDIR} install DESTDIR=${D} PREFIX=/usr
+    oe_runmake -C ${SKIBOOT_SUBDIR} install DESTDIR=${D} prefix=/usr
 }
