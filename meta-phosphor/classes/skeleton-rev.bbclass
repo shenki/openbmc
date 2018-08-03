@@ -1,2 +1,2 @@
-SRCREV ?= "517b35ed92ad2c0df5e048711c175bacb632f6d0"
-SKELETON_URI ?= "git://github.com/openbmc/skeleton"
+SRCREV ?= "b6153595bc33a26f88ececf84fc2437451e27a9e"
+SKELETON_URI ?= "git://github.com/shenki/skeleton;branch=kernel-fsi"
