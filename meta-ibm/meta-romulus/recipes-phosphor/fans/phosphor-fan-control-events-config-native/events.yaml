@@ -254,7 +254,7 @@ events:
             actions:
                 - name: set_speed_on_missing_owner
                   speed:
-                      value: 255
+                      value: 60
                       type: uint64_t
     - name: high_speed_on_occ1_service_fail
       groups:
@@ -273,7 +273,7 @@ events:
             actions:
                 - name: set_speed_on_missing_owner
                   speed:
-                      value: 255
+                      value: 60
                       type: uint64_t
     - name: missing_before_high_speed_air
       groups:
@@ -291,7 +291,7 @@ events:
                 value: false
                 type: bool
             speed:
-                value: 255
+                value: 60
                 type: uint64_t
     - name: fails_before_high_speed_air
       groups:
@@ -309,7 +309,7 @@ events:
                 value: false
                 type: bool
             speed:
-                value: 255
+                value: 60
                 type: uint64_t
     - name: set_air_cooled_speed_boundaries_based_on_ambient
       groups:
@@ -324,16 +324,16 @@ events:
           - name: set_floor_from_average_sensor_value
             map:
                 value:
-                    - 27000: 85
-                    - 32000: 112
-                    - 37000: 126
-                    - 40000: 141
+                    - 27000: 10
+                    - 32000: 15
+                    - 37000: 20
+                    - 40000: 30
                 type: std::map<int64_t, uint64_t>
           - name: set_ceiling_from_average_sensor_value
             map:
                 value:
-                    - 25000: 175
-                    - 27000: 255
+                    - 25000: 20
+                    - 27000: 60
                 type: std::map<int64_t, uint64_t>
     - name: occ_active_speed_changes
       precondition:
@@ -374,7 +374,7 @@ events:
                           value: 1000
                           type: int64_t
                       delta:
-                          value: 11
+                          value: 6
                           type: uint64_t
                     - name: set_net_decrease_speed
                       property:
@@ -384,7 +384,7 @@ events:
                           value: 1000
                           type: int64_t
                       delta:
-                          value: 11
+                          value: 6
                           type: uint64_t
                 timer:
                     interval: 5
@@ -407,7 +407,7 @@ events:
                           value: 1000
                           type: int64_t
                       delta:
-                          value: 6
+                          value: 3
                           type: uint64_t
                     - name: set_net_decrease_speed
                       property:
@@ -417,7 +417,7 @@ events:
                           value: 1000
                           type: int64_t
                       delta:
-                          value: 6
+                          value: 3
                           type: uint64_t
                 timer:
                     interval: 5
