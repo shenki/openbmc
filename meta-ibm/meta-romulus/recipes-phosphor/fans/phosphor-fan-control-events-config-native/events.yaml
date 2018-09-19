@@ -256,7 +256,7 @@ events:
                   speed:
                       value: 60
                       type: uint64_t
-    - name: high_speed_on_occ1_service_fail
+    - name: igh_speed_on_occ1_service_fail
       groups:
           - name: occ1_object
             interface: org.open_power.OCC.Status
@@ -324,16 +324,16 @@ events:
           - name: set_floor_from_average_sensor_value
             map:
                 value:
-                    - 27000: 10
-                    - 32000: 15
-                    - 37000: 20
+                    - 27000: 0
+                    - 32000: 10
+                    - 37000: 15
                     - 40000: 30
                 type: std::map<int64_t, uint64_t>
           - name: set_ceiling_from_average_sensor_value
             map:
                 value:
-                    - 25000: 20
-                    - 27000: 60
+                    - 25000: 5
+                    - 27000: 10
                 type: std::map<int64_t, uint64_t>
     - name: occ_active_speed_changes
       precondition:
@@ -374,7 +374,7 @@ events:
                           value: 1000
                           type: int64_t
                       delta:
-                          value: 6
+                          value: 1
                           type: uint64_t
                     - name: set_net_decrease_speed
                       property:
@@ -384,7 +384,7 @@ events:
                           value: 1000
                           type: int64_t
                       delta:
-                          value: 6
+                          value: 1
                           type: uint64_t
                 timer:
                     interval: 5
@@ -407,7 +407,7 @@ events:
                           value: 1000
                           type: int64_t
                       delta:
-                          value: 3
+                          value: 1
                           type: uint64_t
                     - name: set_net_decrease_speed
                       property:
@@ -417,7 +417,7 @@ events:
                           value: 1000
                           type: int64_t
                       delta:
-                          value: 3
+                          value: 1
                           type: uint64_t
                 timer:
                     interval: 5

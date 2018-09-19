@@ -7,7 +7,7 @@ zone_configuration:
 - zone_conditions:
   zones:
     - zone: 0
-      full_speed: 70
-      default_floor: 10
+      full_speed: 60
+      default_floor: 0
       increase_delay: 5
       decrease_interval: 30
