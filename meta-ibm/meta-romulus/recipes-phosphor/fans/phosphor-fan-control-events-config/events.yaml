@@ -281,7 +281,7 @@ events:
             actions:
                 - name: set_speed_on_missing_owner
                   speed:
-                      value: 255
+                      value: 50
                       type: uint64_t
     - name: missing_or_fails_before_high_speed_air
       groups:
@@ -309,7 +309,7 @@ events:
                 value: false
                 type: bool
             speed:
-                value: 255
+                value: 50
                 type: uint64_t
     - name: set_air_cooled_speed_boundaries_based_on_ambient
       groups:
@@ -329,16 +329,16 @@ events:
           - name: set_floor_from_average_sensor_value
             map:
                 value:
-                    - 27000: 85
-                    - 32000: 112
-                    - 37000: 126
-                    - 40000: 141
+                    - 27000: 10
+                    - 32000: 20
+                    - 37000: 30
+                    - 40000: 40
                 type: std::map<int64_t, uint64_t>
           - name: set_ceiling_from_average_sensor_value
             map:
                 value:
-                    - 25000: 175
-                    - 27000: 255
+                    - 25000: 40
+                    - 27000: 50
                 type: std::map<int64_t, uint64_t>
     - name: occ_active_speed_changes
       precondition:
