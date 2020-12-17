@@ -38,3 +38,7 @@ UBOOT_ENTRYPOINT_aspeed-g6 ?= "0x80001000"
 UBOOT_LOADADDRESS_aspeed-g4 ?= "0x40001000"
 UBOOT_LOADADDRESS_aspeed-g5 ?= "0x80001000"
 UBOOT_LOADADDRESS_aspeed-g6 ?= "0x80001000"
+
+UBOOT_MACHINE_aspeed-g4 = "ast_g6_ncsi_config"
+UBOOT_MACHINE_aspeed-g5 = "ast_g5_ncsi_config"
+UBOOT_MACHINE_aspeed-g6 = "ast2600_openbmc_spl_defconfig"
