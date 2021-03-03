@@ -8,10 +8,10 @@ PE = "1"
 
 # We use the revision in order to avoid having to fetch it from the
 # repo during parse
-SRCREV = "869b79f73711d5a7b6c0bfa3c8888dc2583d1526"
+SRCREV = "9f84f4b33ec77807b79ab86efaefc187f250a7d7"
 
-SRC_URI = "git://git@github.com/openbmc/u-boot.git;nobranch=1;protocol=https"
+SRC_URI = "git://git@github.com/klauskiwi/u-boot.git;branch=hace_sg_work;protocol=https"
 
 S = "${WORKDIR}/git"
 
-PV = "v2019.04+git${SRCPV}"
+PV = "v2021.02+git${SRCPV}"
