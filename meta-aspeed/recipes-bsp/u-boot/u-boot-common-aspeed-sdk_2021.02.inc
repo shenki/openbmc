@@ -8,9 +8,9 @@ PE = "1"
 
 # We use the revision in order to avoid having to fetch it from the
 # repo during parse
-SRCREV = "9f84f4b33ec77807b79ab86efaefc187f250a7d7"
+SRCREV = "5be65ce55b2a3082f2d0d6ddd03ff8c426c6ebae"
 
-SRC_URI = "git://git@github.com/klauskiwi/u-boot.git;branch=hace_sg_work;protocol=https"
+SRC_URI = "git://git@github.com/shenki/u-boot.git;branch=aspeed-hace-v2;protocol=https"
 
 S = "${WORKDIR}/git"
 
