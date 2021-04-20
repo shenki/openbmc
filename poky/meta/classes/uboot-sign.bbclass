@@ -393,6 +393,7 @@ EOF
 	${UBOOT_MKIMAGE} \
 		${@'-D "${SPL_MKIMAGE_DTCOPTS}"' if len('${SPL_MKIMAGE_DTCOPTS}') else ''} \
 		-f ${uboot_its} \
+		-E \
 		${uboot_bin}
 
 	if [ "${SPL_SIGN_ENABLE}" = "1" ] ; then
@@ -404,6 +405,7 @@ EOF
 			-F -k "${SPL_SIGN_KEYDIR}" \
 			-K "${spl_dtb}" \
 			-r ${uboot_bin} \
+			-E \
 			${SPL_MKIMAGE_SIGN_ARGS}
 	fi
 
