@@ -342,18 +342,9 @@ uboot_fitimage_assemble() {
             compression = "none";
             load = <${UBOOT_LOADADDRESS}>;
             entry = <${UBOOT_ENTRYPOINT}>;
-EOF
-
-	if [ "${SPL_SIGN_ENABLE}" = "1" ] ; then
-		cat << EOF >> ${uboot_its}
-            signature {
-                algo = "${uboot_csum},${uboot_sign_algo}";
-                key-name-hint = "${uboot_sign_keyname}";
+            hash {
+                algo = "${uboot_csum}";
             };
-EOF
-	fi
-
-	cat << EOF >> ${uboot_its}
         };
         fdt {
             description = "U-Boot FDT";
@@ -361,18 +352,9 @@ EOF
             type = "flat_dt";
             arch = "${UBOOT_ARCH}";
             compression = "none";
-EOF
-
-	if [ "${SPL_SIGN_ENABLE}" = "1" ] ; then
-		cat << EOF >> ${uboot_its}
-            signature {
-                algo = "${uboot_csum},${uboot_sign_algo}";
-                key-name-hint = "${uboot_sign_keyname}";
+            hash {
+                algo = "${uboot_csum}";
             };
-EOF
-	fi
-
-	cat << EOF >> ${uboot_its}
         };
     };
 
@@ -382,6 +364,11 @@ EOF
             description = "Boot with signed U-Boot FIT";
             loadables = "uboot";
             fdt = "fdt";
+            signature {
+                algo = "${uboot_csum},${uboot_sign_algo}";
+                key-name-hint = "${uboot_sign_keyname}";
+                sign-images = "fdt", "loadables";
+            };
         };
     };
 };
