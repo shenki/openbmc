@@ -8,7 +8,7 @@ PE = "1"
 
 # We use the revision in order to avoid having to fetch it from the
 # repo during parse
-SRCREV = "5be65ce55b2a3082f2d0d6ddd03ff8c426c6ebae"
+SRCREV = "ca6ce63b18f763c5b0d990637fc761264a9743ad"
 
 SRC_URI = "git://git@github.com/shenki/u-boot.git;branch=aspeed-hace-v2;protocol=https"
 
