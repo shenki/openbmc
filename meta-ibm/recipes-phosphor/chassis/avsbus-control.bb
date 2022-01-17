@@ -10,15 +10,14 @@ RDEPENDS:${PN} += "i2c-tools"
 
 S = "${WORKDIR}"
 
-SRC_URI += "file://avsbus-enable.sh"
-SRC_URI:append:witherspoon = " file://avsbus-disable.sh"
+SRC_URI:append:ibm-power9-cpu = "file://avsbus-enable.sh file://avbus-disable.sh"
 
-do_install() {
+do_install:append:ibm-power9-cpu() {
         install -d ${D}${bindir}
         install -m 0755 ${S}/avsbus-enable.sh ${D}${bindir}/avsbus-enable.sh
 }
 
-do_install:append:witherspoon() {
+do_install:append:ibm-power9-cpu() {
         install -m 0755 ${S}/avsbus-disable.sh ${D}${bindir}/avsbus-disable.sh
 }
 
@@ -32,5 +31,12 @@ FMT_DIS = "../${TMPL_DIS}:${TGTFMT}.requires/${INSTFMT_DIS}"
 
 SYSTEMD_SERVICE:${PN} += "${TMPL_EN}"
 SYSTEMD_LINK:${PN} += "${@compose_list(d, 'FMT_EN', 'OBMC_CHASSIS_INSTANCES')}"
+
+# Only enable for witherspoon, mihawk and romulus. Swift does not require the
+# disable script to run.
 SYSTEMD_SERVICE:${PN}:append:witherspoon = " ${TMPL_DIS}"
 SYSTEMD_LINK:${PN}:append:witherspoon = " ${@compose_list(d, 'FMT_DIS', 'OBMC_CHASSIS_INSTANCES')}"
+SYSTEMD_SERVICE:${PN}:append:mihawk = " ${TMPL_DIS}"
+SYSTEMD_LINK:${PN}:append:mihawk = " ${@compose_list(d, 'FMT_DIS', 'OBMC_CHASSIS_INSTANCES')}"
+SYSTEMD_SERVICE:${PN}:append:romlulus = " ${TMPL_DIS}"
+SYSTEMD_LINK:${PN}:append:romlulus = " ${@compose_list(d, 'FMT_DIS', 'OBMC_CHASSIS_INSTANCES')}"
